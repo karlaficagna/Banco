@@ -1,4 +1,4 @@
-package br.com.dionataferraz.vendas
+package br.com.dionataferraz.vendas.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
