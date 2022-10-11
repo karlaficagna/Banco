@@ -37,12 +37,6 @@ class ProfileActivity : AppCompatActivity() {
         edit.putInt("age", 28)
         edit.apply()
 
-        /*findViewById<TextView>(R.id.tv_name).apply {
-            val name = sharedPreferences.getString("name", null)
-            val age = sharedPreferences.getInt("age", 0)
-            if (!name.isNullOrEmpty() && age > 0) {
-                text = "$name $age"
-            }
-        }*/
+
     }
 }

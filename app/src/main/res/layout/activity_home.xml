@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.HomeActivity">
+        tools:context=".HomeActivity">
 
         <View
             android:id="@+id/v_header"
@@ -14,17 +14,6 @@
             android:layout_height="100dp"
             android:background="@color/purple_700"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/purple_700"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <ImageView
             android:layout_width="50dp"
@@ -103,6 +92,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_credit_card" />
 
         <Button
+            android:id="@+id/bt_novaCompra"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"

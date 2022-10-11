@@ -4,19 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dionataferraz.vendas.databinding.ItemListBinding
+import br.com.dionataferraz.vendas.transaction.data.local.TransactionEntity
 
-class TransactionAdapter(private val listener: Listener) :
+class TransactionAdapter() :
     RecyclerView.Adapter<TransactionViewHolder>() {
 
-    interface Listener {
-        fun onItemClick(text: String)
-    }
 
-    private val listItem: MutableList<String> = mutableListOf()
+    private val listItem: MutableList<TransactionEntity> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
         val binding = ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return TransactionViewHolder(binding, listener)
+        return TransactionViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
@@ -27,31 +25,22 @@ class TransactionAdapter(private val listener: Listener) :
     override fun getItemCount(): Int {
         return listItem.size
     }
-    fun addNewList(list: List<String>) {
+    fun addNewList(list: List<TransactionEntity>) {
         listItem.clear()
         notifyItemRangeRemoved(0, listItem.size)
         listItem.addAll(list)
     }
 
-    fun addList(list: List<String>) {
+    fun addList(list: List<TransactionEntity>) {
         listItem.addAll(list)
-    }
-    fun updateItem(item: String, position: Int) {
-        listItem[position] = item
-        notifyItemChanged(position)
     }
 
 }
-
 class TransactionViewHolder(
     private val binding: ItemListBinding,
-    private val listener: TransactionAdapter.Listener
-): RecyclerView.ViewHolder(binding.root) {
+ ): RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(name: String) {
-        binding.tvName.text = name
-        binding.root.setOnClickListener {
-            listener.onItemClick(name)
-        }
+    fun bind(transaction: TransactionEntity) {
+        binding.tvName.text = transaction.saldoConta.toString()
     }
 }

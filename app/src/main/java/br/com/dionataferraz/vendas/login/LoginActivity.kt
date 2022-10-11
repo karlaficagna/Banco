@@ -1,10 +1,10 @@
-package br.com.dionataferraz.vendas.activity
+package br.com.dionataferraz.vendas.login
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import br.com.dionataferraz.vendas.LoginViewModel
+import br.com.dionataferraz.vendas.HomeActivity
 import br.com.dionataferraz.vendas.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -25,6 +25,12 @@ class LoginActivity : AppCompatActivity() {
             val intent  = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
+        viewModel.shouldShowHome.observe(this) { shouldOpen ->
+            if (shouldOpen) {
+                val intent  = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
         viewModel.shouldShowError.observe(this) { shouldShow ->
             if (shouldShow){
@@ -33,6 +39,8 @@ class LoginActivity : AppCompatActivity() {
                     "Deu ruim",
                     Toast.LENGTH_LONG
                 ).show()
+
+                binding.tiPassword.error = "Email invalido"
             }
         }
     }
