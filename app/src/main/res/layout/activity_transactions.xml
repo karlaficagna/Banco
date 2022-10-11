@@ -6,21 +6,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.TransactionsActivity">
+        tools:context=".transaction.TransactionsActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rc_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:spanCount="2"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="2"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="95dp"
             tools:listitem="@layout/item_list" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="teste"
+            android:text="transactions"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

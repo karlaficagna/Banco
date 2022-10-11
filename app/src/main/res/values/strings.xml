@@ -20,4 +20,10 @@
     <string name="nome_responsavel">Nome do responsável da cta</string>
     <string name="debito">Débito</string>
     <string name="Credito">Crédito</string>
+    <string name="adicinar">depositar</string>
+    <string name="depositar">depositar</string>
+    <string name="retirar">retirar</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
 </resources>
